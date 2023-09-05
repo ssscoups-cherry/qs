@@ -1,0 +1,50 @@
+import csv
+import numpy as np
+with open(r'fy.csv') as csvfile: 
+    spamreader = csv.reader(csvfile)
+    data_x = [] 
+    for item in (spamreader):
+            data_x.append(item)
+for i in range(0,len(data_x)):
+    if i<80:
+        data1=[]
+        data1.append(data_x[i])
+        i=i+1
+        data1=np.array(data1)
+        print(data1)
+    elif i<160:
+        data2=[]
+        data2.append(data_x[i])
+        i=i+1
+        data2=np.array(data2)
+        print(data2)
+    elif i<240:
+        data3=[]
+        data3.append(data_x[i])
+        i=i+1
+        data3=np.array(data3)
+        print(data3)
+    elif i<320:
+        data4=[]
+        data4.append(data_x[i])
+        i=i+1
+        data4=np.array(data4)
+        print(data4)
+    elif i<400:
+        data5=[]
+        data5.append(data_x[i])
+        i=i+1
+        data5=np.array(data5)
+        print(data5)
+    elif i<480:
+        data6=[]
+        data6.append(data_x[i])
+        i=i+1
+        data6=np.array(data6)
+        print(data6)
+    elif i<500:
+        data8=[]
+        data8.append(data_x[i])
+        i=i+1
+        data8=np.array(data8)
+        print(data8)

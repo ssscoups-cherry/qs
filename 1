@@ -1,0 +1,40 @@
+import requests
+import random
+from io import StringIO
+from PIL import Image
+import json
+headers = {
+"Cookie":"JSESSIONID=A0053804D456749B5C08F489E3F1D9C2; _gscu_15322769=63264781iz6igj44; _gscbrs_15322769=1; Hm_lvt_d59e2ad63d3a37c53453b996cb7f8d4e=1563264782; Hm_lpvt_d59e2ad63d3a37c53453b996cb7f8d4e=1563264782; _gscs_15322769=63264781zftbxy44|pv:3",
+"Host":"iftp.chinamoney.com.cn",
+"Origin":"https://iftp.chinamoney.com.cn",
+"Referer":"https://iftp.chinamoney.com.cn/english/bdInfo/",
+"User-Agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
+}
+
+
+data = {
+    'Bond Type':'Treasury Bond',
+    'Coupon Type':'All'
+    'Issue Year':'2023',
+    'Rating':'All'}
+response = requests.post(url='http://iftp.chinamoney.com.cn/english/bdInfo/searchSX.do',headers=headers,data=data)
+print(response)
+html = response.content.decode("utf8")
+html=json.loads(html)
+print(html[0]["result"])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
